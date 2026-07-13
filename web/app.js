@@ -14,6 +14,13 @@ function showOutcome(message) {
   outcome.hidden = false;
 }
 
+input.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter' && (event.ctrlKey || event.metaKey)) {
+    event.preventDefault();
+    form.requestSubmit();
+  }
+});
+
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const text = input.value.trim();

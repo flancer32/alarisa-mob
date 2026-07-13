@@ -24,4 +24,24 @@ Browser-delivered static assets belong in `web/` and remain owned by this packag
 - `app.css` — application styles (mobile-first);
 - `app.js` — browser application module.
 
+## Color Palette
+
+Derived from the avatar (`alarisa2-512.webp`, dominant hue ≈ 26° / warm orange):
+
+| Role | Color | Usage |
+|------|-------|-------|
+| Page background | `#f7efe6` | Warm cream, page backdrop |
+| Surface | `#ffffff` | White, card backgrounds (status, outcome) |
+| Primary text | `#2b1d12` | Warm dark brown, body and heading text |
+| Secondary text | `#8c6a4d` | Medium warm brown, eyebrow label |
+| Primary accent | `#d96d1a` | Orange, interactive elements (button, focus ring) |
+| Accent hover | `#bf5a0e` | Darker orange, button hover |
+| Border | `#dcc9b8` | Warm beige, input border |
+| Surface border | `#e6d6c8` | Light warm beige, card border |
+| Success bg/fg | `#eaf4ea` / `#2d6b3d` | Accepted state (warm-tinted green) |
+| Error bg/fg | `#fce8e0` / `#8b3a2a` | Error/offline state (warm-tinted red) |
+| Theme color | `#2b1d12` | Browser chrome and manifest theme |
+
+The scheme is monochromatic warm (orange → amber → brown). Avatar accent colors (`#E76A18`, `#EF8F30`) inspired the interactive accent; dark brown tones (`#371E11`, `#592710`) set text and chrome colors.
+
 Fonts, illustrations beyond the avatar, and licensing remain not yet defined.
