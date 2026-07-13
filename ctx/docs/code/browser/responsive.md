@@ -5,4 +5,4 @@
 
 ## Baseline
 
-The chat experience must remain usable on narrow mobile screens and wider desktop screens. Exact breakpoints and layout transformations are not yet defined.
+The chat experience must remain usable as an installed application on narrow mobile screens and in a browser on wider desktop screens. Message composition, outcome visibility, and application status must remain reachable without horizontal scrolling at narrow widths. Exact breakpoints and layout transformations are not yet defined.

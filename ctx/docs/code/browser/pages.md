@@ -5,6 +5,6 @@
 
 ## Catalogue
 
-- `chat` — initial Principal-facing page for sending a message and receiving an Alarisa outcome.
+- `chat` — initial Principal-facing page at `/` for entering and submitting a message, then showing an Alarisa outcome or communication status.
 
-No route URL or additional pages are defined yet.
+No additional pages, deep links, or routes are defined yet. The page does not establish endpoint paths, authentication, or an outcome-delivery protocol.

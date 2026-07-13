@@ -9,4 +9,4 @@ Package tooling runs on Node.js 20 or newer. The delivered application runs in a
 
 ## Constraints
 
-The package must not assume a specific backend host, deployment topology, browser framework, or offline data strategy until those are explicitly defined.
+The host must publish this package's `web/` directory at the web-origin root so the manifest and service worker have root URL paths and the PWA can be installed on a mobile device. The package must not assume a specific backend host, deployment topology, browser framework, offline data strategy, push delivery, or server-to-browser delivery mechanism until those are explicitly defined.

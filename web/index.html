@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17324d">
+  <meta name="description" content="Личный канал связи с Alarisa">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/app.css">
+  <title>Alarisa</title>
+</head>
+<body>
+  <main class="app">
+    <header><p class="eyebrow">Личный канал</p><h1>Alarisa</h1></header>
+    <section class="status" aria-live="polite" data-status="ready">Готова принять ваш сигнал.</section>
+    <section class="outcome" aria-live="polite" hidden></section>
+    <form id="human-signal-form">
+      <label for="human-signal">Сообщение для Alarisa</label>
+      <textarea id="human-signal" name="text" rows="5" maxlength="4000" required autofocus></textarea>
+      <button type="submit">Отправить</button>
+    </form>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

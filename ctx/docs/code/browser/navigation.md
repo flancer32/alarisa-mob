@@ -5,4 +5,4 @@
 
 ## Navigation Model
 
-The only defined entry is chat. Routes, deep links, navigation controls, and protected-route behavior are not yet defined.
+The only defined application entry is chat at `/`. PWA installation may launch this same entry. Routes, deep links, navigation controls, and protected-route behavior are not yet defined.

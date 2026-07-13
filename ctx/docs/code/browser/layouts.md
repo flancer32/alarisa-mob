@@ -5,4 +5,4 @@
 
 ## Layout Model
 
-The initial chat page needs a conversation region, a message-composition region, and a visible application-status region. Detailed visual hierarchy is undecided.
+The initial chat page needs an outcome region, a message-composition region, and a visible application-status region. The outcome region may display a returned server outcome or the status of an in-progress submission; it is not specified as a persistent local transcript. Detailed visual hierarchy is undecided.

@@ -1,0 +1,12 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; background: #edf3f8; color: #152331; }
+body { margin: 0; min-width: 320px; }
+.app { box-sizing: border-box; width: min(100%, 720px); min-height: 100vh; margin: auto; padding: 10vh 1.25rem 2rem; }
+h1 { margin: .1rem 0 2rem; font-size: clamp(2.25rem, 9vw, 4rem); }
+.eyebrow { margin: 0; color: #44647e; font-size: .9rem; text-transform: uppercase; letter-spacing: .08em; }
+.status, .outcome { margin: 1rem 0; padding: 1rem; border-radius: .75rem; background: #fff; }
+.status[data-status="error"], .status[data-status="offline"] { background: #fff0f0; color: #7b1b1b; }
+.status[data-status="accepted"] { background: #e7f7ed; color: #145c32; }
+form { display: grid; gap: .75rem; margin-top: 1.5rem; }
+textarea { box-sizing: border-box; width: 100%; resize: vertical; padding: .8rem; border: 1px solid #8fa6b9; border-radius: .5rem; font: inherit; }
+button { justify-self: start; padding: .7rem 1.15rem; border: 0; border-radius: .5rem; background: #17324d; color: #fff; font: inherit; cursor: pointer; }
+button:disabled { opacity: .65; cursor: wait; }

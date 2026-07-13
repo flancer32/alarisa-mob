@@ -5,4 +5,4 @@
 
 ## Chat Page
 
-The chat page composes a conversation region, message-composition region, and application-status region. Reusable widgets and custom elements are not yet defined.
+The chat page composes an outcome region, message-composition region, and application-status region. Reusable widgets and custom elements are not yet defined.

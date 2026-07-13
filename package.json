@@ -18,6 +18,13 @@
     "teqfw"
   ],
   "types": "types.d.ts",
+  "files": [
+    "ai/",
+    "jsconfig.json",
+    "src/",
+    "web/",
+    "types.d.ts"
+  ],
   "engines": {
     "node": ">=20"
   },
