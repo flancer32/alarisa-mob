@@ -1,0 +1,45 @@
+{
+  "name": "@flancer32/alarisa-pwa",
+  "version": "0.1.0",
+  "description": "PWA client package for the Alarisa personal digital avatar.",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flancer32/alarisa-pwa.git"
+  },
+  "homepage": "https://github.com/flancer32/alarisa-pwa",
+  "bugs": {
+    "url": "https://github.com/flancer32/alarisa-pwa/issues"
+  },
+  "keywords": [
+    "alarisa",
+    "pwa",
+    "frontend",
+    "teqfw"
+  ],
+  "types": "types.d.ts",
+  "engines": {
+    "node": ">=20"
+  },
+  "teqfw": {
+    "namespaces": [
+      {
+        "prefix": "Alarisa_Pwa_",
+        "path": "./src",
+        "ext": ".mjs"
+      }
+    ]
+  },
+  "scripts": {
+    "test:unit": "find test/unit -name '*.test.mjs' -print0 | xargs -0 -r node --test",
+    "test": "npm run test:unit"
+  },
+  "dependencies": {
+    "@flancer32/teq-web": ">=0.13.1",
+    "@teqfw/log": ">=0.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "typescript": "^7.0.2"
+  }
+}
