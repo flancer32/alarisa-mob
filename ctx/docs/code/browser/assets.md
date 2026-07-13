@@ -15,4 +15,13 @@ Browser-delivered static assets belong in `web/` and remain owned by this packag
 - application icons — install and browser identity assets;
 - browser modules, styles, and other static application resources — page presentation and behavior.
 
-Exact icon set, visual identity, fonts, illustrations, licensing, and service-worker cache policy are not yet defined.
+## Resource Inventory
+
+- `favicon.ico` — legacy favicon derived from the Alarisa source artwork;
+- `icon.svg` — SVG vector icon used as the primary manifest icon (any size);
+- `icon-192.png` / `icon-512.png` — PNG raster icons for PWA installation, generated from the source favicon.png (192×192 and 512×512, maskable);
+- `alarisa2-512.webp` — Principal-facing avatar displayed on the chat page, circular-cropped via CSS;
+- `app.css` — application styles (mobile-first);
+- `app.js` — browser application module.
+
+Fonts, illustrations beyond the avatar, and licensing remain not yet defined.

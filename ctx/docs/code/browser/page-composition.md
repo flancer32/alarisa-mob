@@ -5,4 +5,4 @@
 
 ## Chat Page
 
-The chat page composes an outcome region, message-composition region, and application-status region. Reusable widgets and custom elements are not yet defined.
+The chat page composes an avatar region (Alarisa portrait, centered on mobile, left-aligned on desktop), an outcome region, a message-composition region, and an application-status region. Reusable widgets and custom elements are not yet defined.

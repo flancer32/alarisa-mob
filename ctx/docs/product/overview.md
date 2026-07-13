@@ -18,5 +18,6 @@ Out of scope: Alarisa runtime orchestration, memory ownership, external-service 
 - The package serves a single Principal's private Alarisa instance.
 - It does not create a separate human role or authority model.
 - PWA chat is the initial interaction boundary.
+- The Principal interacts with Alarisa primarily through mobile devices; the UI is built mobile-first.
 - The package owns browser resources; the base host publishes them at the origin-root URL paths required for PWA installation.
 - The package does not define the server message contract or server-to-browser delivery mechanism.
