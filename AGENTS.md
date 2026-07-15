@@ -2,34 +2,21 @@
 
 - Path: `AGENTS.md`
 - Template Version: `20260702`
-- Changed: `20260709`
+- Changed: `20260715`
 
 ## Purpose
 
-Root-level working rules for the Alarisa product repository.
+Root-level working rules for the `@flancer32/alarisa-mob` package repository.
 
-This is a **two-repository ADSM project**: the product code lives here, the cognitive context is in `ctx/` (mounted as a separate repo).
+## Repository Topology
+
+This is a one-repository ADSM project. Product files and the embedded cognitive context under `ctx/` are versioned together.
+
+The cognitive context is authoritative. Read `ctx/AGENTS.md` and `ctx/docs/` before changing package meaning or browser behavior.
 
 ## Level Boundary
 
-Defines:
-
-- boundary between this product repository and the `ctx/` cognitive context.
-- root-level protection and escalation rules.
-
-Does NOT define:
-
-- product meaning, requirements, or domain knowledge (see `ctx/docs/`).
-- implementation-level structure.
-
-## Two-Repository Topology
-
-- **Product repository** (this one) — the implementation code for Alarisa.
-- **Context repository** (`ctx/`) — the cognitive context, mounted here as a separate git tree.
-
-The cognitive context is authoritative. Consult `ctx/AGENTS.md` and `ctx/docs/` before making product decisions.
-
-Do not mix changes between the two repositories. Do not remove, replace, or relocate `ctx/`.
+Defines the boundary between the mobile PWA implementation and its embedded cognitive context. Product meaning belongs under `ctx/docs/`; source and browser resources belong outside `ctx/`.
 
 ## Root File Protection
 

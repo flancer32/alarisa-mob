@@ -28,7 +28,7 @@ container.addNamespaceRoot("Alarisa_Back_", path.resolve(projectRoot, "src-dev")
 const pipeline = await container.get("Fl32_Web_Back_PipelineEngine$");
 const server = await container.get("Fl32_Web_Back_Server$");
 const staticHandler = await container.get("Fl32_Web_Back_Handler_Static$");
-const humanIngress = await container.get("Alarisa_Pwa_Back_Handler_HumanIngress$");
+const humanIngress = await container.get("Alarisa_Mob_Back_Handler_HumanIngress$");
 const dtoSourceFactory = await container.get("Fl32_Web_Back_Dto_Source__Factory$");
 const runtimeConfigFactory = await container.get("Fl32_Web_Back_Config_Runtime__Factory$");
 

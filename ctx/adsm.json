@@ -2,7 +2,7 @@
   "schema": "adsm-context",
   "version": "0.1.0",
   "notes": [
-    "Initial context for the Alarisa PWA package.",
+    "Initial context for the Alarisa mobile PWA package.",
     "The context is intended to be mounted as ./ctx/ in this package repository."
   ]
 }

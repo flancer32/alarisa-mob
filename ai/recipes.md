@@ -5,7 +5,7 @@
 Resolve the PWA handler and register it before the host static handler. Configure the static handler with the installed package's `web/` directory as a root source at `/`.
 
 ```js
-const humanIngressHandler = await container.get('Alarisa_Pwa_Back_Handler_HumanIngress$');
+const humanIngressHandler = await container.get('Alarisa_Mob_Back_Handler_HumanIngress$');
 const staticHandler = await container.get('Fl32_Web_Back_Handler_Static$');
 
 pipeline.addHandler(humanIngressHandler);

@@ -23,12 +23,12 @@ test('TeqFW pipeline delivers the PWA ingress route to host ingress', async () =
   const container = new Container();
   container.enableTestMode();
   container.addNamespaceRoot('Alarisa_', path.resolve('test/fixtures/alarisa/src'), '.mjs');
-  container.addNamespaceRoot('Alarisa_Pwa_', path.resolve('src'), '.mjs');
+  container.addNamespaceRoot('Alarisa_Mob_', path.resolve('src'), '.mjs');
   container.addNamespaceRoot('Fl32_Web_', path.resolve('node_modules/@flancer32/teq-web/src'), '.mjs');
   container.addNamespaceRoot('TeqFw_Log_', path.resolve('node_modules/@teqfw/log/src'), '.mjs');
   container.addNamespaceRoot('node:', path.resolve('node_modules'), '.mjs');
   const pipeline = await container.get('Fl32_Web_Back_PipelineEngine$');
-  const handler = await container.get('Alarisa_Pwa_Back_Handler_HumanIngress$');
+  const handler = await container.get('Alarisa_Mob_Back_Handler_HumanIngress$');
   const ingress = await container.get('Alarisa_Back_Ingress_Human$');
   pipeline.addHandler(handler);
   pipeline.lockHandlers();

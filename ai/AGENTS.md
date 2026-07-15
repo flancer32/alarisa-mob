@@ -4,7 +4,7 @@ Version: 20260713
 
 ## Package Purpose
 
-This directory is the agent interface for `@flancer32/alarisa-pwa`. It is a concise usage guide for AI agents that consume this package from an Alarisa TeqFW host.
+This directory is the agent interface for `@flancer32/alarisa-mob`. It is a concise usage guide for AI agents that consume this package from an Alarisa TeqFW host.
 
 It describes integration points and supported behavior. It does not describe package development, its repository layout, or test procedures.
 

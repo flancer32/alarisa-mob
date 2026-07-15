@@ -13,7 +13,7 @@ Do not copy these resources into the host only to obtain root URLs.
 
 ## Human Ingress Handler
 
-`Alarisa_Pwa_Back_Handler_HumanIngress$` handles only `POST /api/ingress/human` with `Content-Type: application/json` and body:
+`Alarisa_Mob_Back_Handler_HumanIngress$` handles only `POST /api/ingress/human` with `Content-Type: application/json` and body:
 
 ```json
 {"text":"Principal contribution"}

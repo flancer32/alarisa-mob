@@ -1,18 +1,20 @@
 {
-  "name": "@flancer32/alarisa-pwa",
-  "version": "0.1.0",
-  "description": "PWA client package for the Alarisa personal digital avatar.",
+  "name": "@flancer32/alarisa-mob",
+  "version": "0.2.0",
+  "description": "Mobile browser and PWA composition package for Alarisa.",
   "type": "module",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flancer32/alarisa-pwa.git"
+    "url": "git+ssh://git@github.com/flancer32/alarisa-mob.git"
   },
-  "homepage": "https://github.com/flancer32/alarisa-pwa",
+  "homepage": "https://github.com/flancer32/alarisa-mob",
   "bugs": {
-    "url": "https://github.com/flancer32/alarisa-pwa/issues"
+    "url": "https://github.com/flancer32/alarisa-mob/issues"
   },
   "keywords": [
     "alarisa",
+    "mobile",
     "pwa",
     "frontend",
     "teqfw"
@@ -31,7 +33,7 @@
   "teqfw": {
     "namespaces": [
       {
-        "prefix": "Alarisa_Pwa_",
+        "prefix": "Alarisa_Mob_",
         "path": "./src",
         "ext": ".mjs"
       }

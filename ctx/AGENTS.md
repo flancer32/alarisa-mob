@@ -6,12 +6,12 @@
 
 ## Purpose
 
-This repository branch is the cognitive context for the Alarisa PWA package.
+This embedded directory is the cognitive context for the `@flancer32/alarisa-mob` mobile PWA package.
 
 ## Bootstrap Marker
 
 - This context follows ADSM conventions.
-- Use skill `adsm:ctx` for structure validation, upgrade logic, and methodology rules.
+- Use skill `adsm-ctx` for structure validation, upgrade logic, and methodology rules.
 
 ## Level Map
 
@@ -25,6 +25,6 @@ This repository branch is the cognitive context for the Alarisa PWA package.
 - Read `docs/filesystem.md` for the repository map.
 - Read `docs/` before changing package behavior.
 
-## Mounted Topology Rule
+## Level Boundary
 
-When `ctx/` is maintained as a separate repository, treat it as mounted at `./ctx/`. Do not create another nested `ctx/` directory.
+Defines package meaning and constraints for the embedded context. Source code, browser resources, package metadata, and generated assets remain outside this directory.

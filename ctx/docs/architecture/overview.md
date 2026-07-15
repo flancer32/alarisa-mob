@@ -1,4 +1,4 @@
-# PWA Architecture Overview
+# Mobile PWA Architecture Overview
 
 - Path: `ctx/docs/architecture/overview.md`
 - Changed: `20260713`

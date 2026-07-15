@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * @namespace Alarisa_Pwa_Back_Handler_HumanIngress
+ * @namespace Alarisa_Mob_Back_Handler_HumanIngress
  * @description TeqFW PROCESS handler that validates a PWA Principal contribution and delegates it to host ingress.
  */
 
@@ -42,7 +42,7 @@ function respondJson(response, status, body) {
     response.end(JSON.stringify(body));
 }
 
-export default class Alarisa_Pwa_Back_Handler_HumanIngress {
+export default class Alarisa_Mob_Back_Handler_HumanIngress {
     /**
      * @param {object} deps
      * @param {Fl32_Web_Back_Dto_Info__Factory$} deps.dtoInfoFactory
@@ -51,7 +51,7 @@ export default class Alarisa_Pwa_Back_Handler_HumanIngress {
      */
     constructor({dtoInfoFactory, STAGE, ingress}) {
         const info = dtoInfoFactory.create({
-            name: 'Alarisa_Pwa_Back_Handler_HumanIngress',
+            name: 'Alarisa_Mob_Back_Handler_HumanIngress',
             stage: STAGE.PROCESS,
         });
 

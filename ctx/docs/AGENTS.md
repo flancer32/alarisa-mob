@@ -6,7 +6,7 @@
 
 ## Purpose
 
-This branch holds the declarative documentation for the Alarisa PWA package.
+This branch holds the declarative documentation for the Alarisa mobile PWA package.
 
 ## Level Map
 

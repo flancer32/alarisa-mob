@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Describe the Alarisa PWA client package.
+Describe the `@flancer32/alarisa-mob` mobile PWA client package.
 
 ## Delivery Model
 

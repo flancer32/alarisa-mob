@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Contains TeqFW modules in the `Alarisa_Pwa_` namespace.
+Contains TeqFW modules in the `Alarisa_Mob_` namespace.
 
 ## Boundary
 

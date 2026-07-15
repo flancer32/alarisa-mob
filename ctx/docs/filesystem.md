@@ -10,7 +10,7 @@ Defines the top-level repository map only.
 ## Root Structure
 
 - `ctx/` — ADSM cognitive context for this package.
-- `src/` — ECMAScript modules in the `Alarisa_Pwa_` namespace.
+- `src/` — ECMAScript modules in the `Alarisa_Mob_` namespace.
 - `test/` — automated package tests.
 - `web/` — browser-delivered PWA resources.
 

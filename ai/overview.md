@@ -1,6 +1,6 @@
 # Package Overview
 
-`@flancer32/alarisa-pwa` supplies Alarisa's initial Principal-facing PWA and one narrow TeqFW ingress-transport handler.
+`@flancer32/alarisa-mob` supplies Alarisa's initial Principal-facing PWA and one narrow TeqFW ingress-transport handler.
 
 Use this package from the `@flancer32/alarisa` host when it needs to:
 
@@ -12,8 +12,8 @@ The package does not provide identity, authorization, signal creation, dialogue 
 
 ## Consumer Entry Points
 
-- `Alarisa_Pwa_Back_Handler_HumanIngress$` — a TeqFW PROCESS handler for the PWA submission route.
+- `Alarisa_Mob_Back_Handler_HumanIngress$` — a TeqFW PROCESS handler for the PWA submission route.
 - `web/` — the package-owned static source to map at `/`.
 - `Alarisa_Back_Ingress_Human$` — required host component, not supplied by this package.
 
-The `Alarisa_Pwa_` namespace is declared in package metadata and should be included in normal TeqFW namespace discovery.
+The `Alarisa_Mob_` namespace is declared in package metadata and should be included in normal TeqFW namespace discovery.

@@ -1,3 +1,3 @@
-# alarisa-pwa-ctx
+# alarisa-mob-ctx
 
-ADSM cognitive context for the Alarisa PWA package. Read `AGENTS.md` and `docs/` before implementation changes.
+ADSM cognitive context for the `@flancer32/alarisa-mob` mobile PWA package. Read `AGENTS.md` and `docs/` before implementation changes.
