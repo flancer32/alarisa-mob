@@ -15,7 +15,7 @@ let pendingText;
 let hiddenAt;
 const MOBILE_BACKGROUND_LOCK_MS = 15 * 60 * 1000;
 
-function showLocked(message = 'Требуется подтверждение Principal.') {
+function showLocked(message = 'Principal verification is required.') {
   principalContent.hidden = true;
   authPanel.hidden = false;
   authStatus.textContent = message;
@@ -31,7 +31,7 @@ function showUnlocked() {
 
 async function beginAuthentication() {
   authAction.disabled = true;
-  authStatus.textContent = 'Ожидаем подтверждение на устройстве…';
+  authStatus.textContent = 'Waiting for confirmation on your device…';
   authStatus.dataset.status = 'authenticating';
   try {
     const enrollmentToken = new URLSearchParams(location.search).get('enrollment');
@@ -43,7 +43,7 @@ async function beginAuthentication() {
     }
     showUnlocked();
   } catch (error) {
-    showLocked(error instanceof Error ? error.message : 'Не удалось подтвердить Principal.');
+    showLocked(error instanceof Error ? error.message : 'Could not verify the Principal.');
   } finally {
     authAction.disabled = false;
   }
@@ -52,7 +52,7 @@ async function beginAuthentication() {
 authAction.addEventListener('click', beginAuthentication);
 lockAction.addEventListener('click', async () => {
   await logout().catch(() => undefined);
-  showLocked('Приложение заблокировано.');
+  showLocked('The application is locked.');
 });
 
 document.addEventListener('visibilitychange', async () => {
@@ -60,7 +60,7 @@ document.addEventListener('visibilitychange', async () => {
     hiddenAt = Date.now();
   } else if (hiddenAt && Date.now() - hiddenAt >= MOBILE_BACKGROUND_LOCK_MS && !principalContent.hidden) {
     await logout().catch(() => undefined);
-    showLocked('Подтвердите Principal после длительного перерыва.');
+    showLocked('Verify the Principal after an extended break.');
   }
 });
 
@@ -90,7 +90,7 @@ form.addEventListener('submit', async (event) => {
     pendingText = text;
   }
   button.disabled = true;
-  showStatus('Отправляем сигнал…', 'submitting');
+  showStatus('Sending signal…', 'submitting');
   outcome.hidden = true;
   try {
     const response = await fetch('/api/v1/ingress/human', {
@@ -100,35 +100,35 @@ form.addEventListener('submit', async (event) => {
     });
     const result = await response.json();
     if (response.status === 401) {
-      showLocked('Сессия завершена. Подтвердите Principal снова.');
+      showLocked('Your session has ended. Verify the Principal again.');
       return;
     }
-    if (!response.ok || !result.accepted) throw new Error(result.error || 'Сигнал не принят');
+    if (!response.ok || !result.accepted) throw new Error(result.error || 'Signal was not accepted');
     input.value = '';
     pendingContributionId = undefined;
     pendingText = undefined;
-    showStatus('Сигнал принят входным контуром.', 'accepted');
-    showOutcome('Alarisa обработает ваше сообщение. Это подтверждение приёма, а не ответ Alarisa.');
+    showStatus('Signal accepted by the ingress boundary.', 'accepted');
+    showOutcome('Alarisa will process your message. This confirms receipt; it is not a response from Alarisa.');
   } catch (error) {
-    showStatus(navigator.onLine ? 'Не удалось передать сигнал.' : 'Нет соединения с Alarisa.', navigator.onLine ? 'error' : 'offline');
-    showOutcome(error instanceof Error ? error.message : 'Попробуйте ещё раз.');
+    showStatus(navigator.onLine ? 'Could not send the signal.' : 'No connection to Alarisa.', navigator.onLine ? 'error' : 'offline');
+    showOutcome(error instanceof Error ? error.message : 'Try again.');
   } finally {
     button.disabled = false;
   }
 });
 
-window.addEventListener('offline', () => showStatus('Нет соединения с Alarisa.', 'offline'));
-window.addEventListener('online', () => showStatus('Готова принять ваш сигнал.', 'ready'));
+window.addEventListener('offline', () => showStatus('No connection to Alarisa.', 'offline'));
+window.addEventListener('online', () => showStatus('Ready to receive your signal.', 'ready'));
 
 const enrollmentToken = new URLSearchParams(location.search).get('enrollment');
 currentSession()
   .then((session) => {
     if (session.authenticated) showUnlocked();
     else {
-      authAction.textContent = enrollmentToken ? 'Доверять этому устройству' : 'Войти с passkey';
-      showLocked(enrollmentToken ? 'Зарегистрируйте passkey для этого устройства.' : undefined);
+      authAction.textContent = enrollmentToken ? 'Trust this device' : 'Sign in with a passkey';
+      showLocked(enrollmentToken ? 'Register a passkey for this device.' : undefined);
     }
   })
-  .catch(() => showLocked('Сервер недоступен. Приложение остаётся заблокированным.'));
+  .catch(() => showLocked('Server unavailable. The application remains locked.'));
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js', {scope: './'});

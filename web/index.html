@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#2b1d12">
-  <meta name="description" content="Личный канал связи с Alarisa">
+  <meta name="description" content="Personal channel to Alarisa">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" href="./favicon.ico" sizes="any">
   <link rel="stylesheet" href="./app.css">
@@ -13,19 +13,19 @@
 <body>
   <main class="app">
     <div class="profile"><img src="./alarisa2-512.webp" alt="Alarisa" class="avatar"></div>
-    <header><p class="eyebrow">Личный канал</p><h1>Alarisa</h1></header>
+    <header><p class="eyebrow">Personal channel</p><h1>Alarisa</h1></header>
     <section id="auth-panel" class="auth-panel">
-      <p id="auth-status" class="status" aria-live="polite" data-status="loading">Проверяем доступ…</p>
-      <button id="auth-action" type="button" hidden>Войти с passkey</button>
+      <p id="auth-status" class="status" aria-live="polite" data-status="loading">Checking access…</p>
+      <button id="auth-action" type="button" hidden>Sign in with a passkey</button>
     </section>
     <section id="principal-content" hidden>
-    <div class="session-actions"><button id="lock-action" type="button" class="secondary">Заблокировать</button></div>
-    <section class="status" aria-live="polite" data-status="ready">Готова принять ваш сигнал.</section>
+    <div class="session-actions"><button id="lock-action" type="button" class="secondary">Lock</button></div>
+    <section class="status" aria-live="polite" data-status="ready">Ready to receive your signal.</section>
     <section class="outcome" aria-live="polite" hidden></section>
     <form id="human-signal-form">
-      <label for="human-signal">Сообщение для Alarisa</label>
+      <label for="human-signal">Message to Alarisa</label>
       <textarea id="human-signal" name="text" rows="5" maxlength="4000" required autofocus></textarea>
-      <button type="submit">Отправить</button>
+      <button type="submit">Send</button>
     </form>
     </section>
   </main>
