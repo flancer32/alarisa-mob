@@ -14,6 +14,12 @@
   <main class="app">
     <div class="profile"><img src="./alarisa2-512.webp" alt="Alarisa" class="avatar"></div>
     <header><p class="eyebrow">Личный канал</p><h1>Alarisa</h1></header>
+    <section id="auth-panel" class="auth-panel">
+      <p id="auth-status" class="status" aria-live="polite" data-status="loading">Проверяем доступ…</p>
+      <button id="auth-action" type="button" hidden>Войти с passkey</button>
+    </section>
+    <section id="principal-content" hidden>
+    <div class="session-actions"><button id="lock-action" type="button" class="secondary">Заблокировать</button></div>
     <section class="status" aria-live="polite" data-status="ready">Готова принять ваш сигнал.</section>
     <section class="outcome" aria-live="polite" hidden></section>
     <form id="human-signal-form">
@@ -21,6 +27,7 @@
       <textarea id="human-signal" name="text" rows="5" maxlength="4000" required autofocus></textarea>
       <button type="submit">Отправить</button>
     </form>
+    </section>
   </main>
   <script type="module" src="./app.js"></script>
 </body>

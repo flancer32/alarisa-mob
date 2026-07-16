@@ -5,6 +5,6 @@
 
 ## Catalogue
 
-- `chat` — initial Principal-facing page at package-relative `./`, published as `/mob/`, for entering and submitting a message and showing transport status.
+- `authenticated contact` — package-relative `./`, published as `/mob/`, combines public authentication/enrollment states with the locked or unlocked Principal contribution form.
 
-No additional pages, deep links, or routes are defined yet. The page does not establish endpoint paths, authentication, or an outcome-delivery protocol.
+An administrator enrollment URL uses the same page with a temporary `enrollment` query parameter; success removes it from the visible URL. No account-selection, credential-management, history, or outcome-delivery page exists.

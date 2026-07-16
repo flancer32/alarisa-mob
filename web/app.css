@@ -12,9 +12,13 @@ h1 { margin: .1rem 0 2rem; font-size: clamp(2.25rem, 9vw, 4rem); }
 .status, .outcome { margin: 1rem 0; padding: 1rem; border-radius: .75rem; background: #fff; border: 1px solid #e6d6c8; }
 .status[data-status="error"], .status[data-status="offline"] { background: #fce8e0; color: #8b3a2a; }
 .status[data-status="accepted"] { background: #eaf4ea; color: #2d6b3d; }
+.status[data-status="locked"], .status[data-status="authenticating"] { background: #fff7db; color: #6d5410; }
+.auth-panel { display: grid; justify-items: start; }
+.session-actions { display: flex; justify-content: flex-end; }
 form { display: grid; gap: .75rem; margin-top: 1.5rem; }
 textarea { box-sizing: border-box; width: 100%; resize: vertical; padding: .8rem; border: 1px solid #dcc9b8; border-radius: .5rem; font: inherit; }
 textarea:focus { outline: 2px solid #d96d1a; outline-offset: 1px; border-color: #d96d1a; }
 button { justify-self: start; padding: .7rem 1.15rem; border: 0; border-radius: .5rem; background: #d96d1a; color: #fff; font: inherit; cursor: pointer; }
 button:disabled { opacity: .65; cursor: wait; }
+button.secondary { background: transparent; color: #8c4d1d; border: 1px solid #cba989; }
 @media (hover: hover) { button:hover { background: #bf5a0e; } }

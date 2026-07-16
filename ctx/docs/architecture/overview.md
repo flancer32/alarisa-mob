@@ -13,6 +13,8 @@ The base `@flancer32/alarisa` host resolves the package's published `web/` direc
 
 The PWA owns browser presentation, browser-visible state, installation behavior, and offline-facing UI. The base Alarisa runtime owns identity, authorization, orchestration, memory, and capability execution.
 
+The public mobile shell uses the shared `comm` WebAuthn client to restore or establish the one fixed Principal session and never owns server authentication policy. Its local policy explicitly locks through logout and after 15 minutes continuously in the background; foreground inactivity alone does not lock.
+
 ## Constraint
 
-The package provides the browser input for submitting a Principal contribution through the shared `comm` transport at `POST /api/v1/ingress/human`. It retains one stable `contributionId` across retry and sends `{contributionId, text, channel: "mob"}`. A `202` response means durable ingress acceptance; it is not an assistant event or a promise of an outcome. Transport validation, identity, authorization, signal creation, dialogue semantics, storage, and server-to-browser delivery remain outside this package.
+The package authenticates through shared `comm` browser contracts, then provides browser input for submitting a Principal contribution at `POST /api/v1/ingress/human`. It retains one stable `contributionId` across retry and sends `{contributionId, text, channel: "mob"}`. A `202` response means durable ingress acceptance; it is not an assistant event or a promise of an outcome. Trusted verification, authorization, signal creation, dialogue semantics, storage, and server-to-browser delivery remain outside this package.

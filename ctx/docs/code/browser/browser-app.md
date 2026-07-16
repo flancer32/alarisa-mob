@@ -21,11 +21,14 @@ The initial browser entry is the Principal's mobile Alarisa contact experience a
 
 ## Main User Flows
 
-1. The Principal opens or installs the PWA and reaches the chat page.
-2. The Principal enters and submits a message.
-3. The page shows that the message is being processed, then presents a returned outcome or a clear unavailable/error state.
+1. The Principal opens or installs the public PWA shell.
+2. The page restores a valid opaque session, registers a passkey from an administrator enrollment URL, or requests passkey authentication; there is no account selection.
+3. The unlocked Principal enters and submits a message.
+4. The page shows durable ingress acknowledgement or a clear unavailable/error state.
 
-The page submits `POST /api/v1/ingress/human` with `{contributionId, text, channel: "mob"}` to its own origin. It creates one contribution identifier for the current text and retains it across retry until `202`. A `202` confirms only durable ingress acceptance. The page must not represent this acknowledgement as an assistant event or eventual outcome. Authentication and later assistant-event delivery remain runtime concerns.
+The page submits `POST /api/v1/ingress/human` with `{contributionId, text, channel: "mob"}` to its own origin after authentication. It creates one contribution identifier for the current text and retains it across retry until `202`. A `202` confirms only durable ingress acceptance. A `401` returns the surface to locked state. Later assistant-event delivery remains undeclared.
+
+Explicit lock revokes the server session. Remaining continuously in the background for 15 minutes also revokes it and removes the contribution form from visible state. Foreground inactivity does not lock. If the server is unavailable, the PWA stays locked.
 
 ## Accessibility Baseline
 
@@ -33,4 +36,4 @@ User-visible controls, status, errors, and chat interaction must remain operable
 
 ## Bootstrapping And Initialization
 
-Initialization registers PWA resources when supported by the browser, establishes the initial visible state, and exposes loading and unavailable outcomes rather than assuming that the base runtime is reachable. It must not persist chat history, credentials, or an offline message queue until their ownership and lifecycle are approved.
+Initialization registers PWA resources, checks safe server session status, and exposes authentication, enrollment, locked, unlocked, and unavailable outcomes. The shared client calls native WebAuthn but neither it nor this package can read private keys, biometric data, or the `HttpOnly` session cookie. The PWA must not persist chat history, Principal data, credentials, or an offline message queue.
