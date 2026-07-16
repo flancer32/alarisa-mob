@@ -9,4 +9,4 @@
 
 ## Engineering Constraints
 
-Keep browser application behavior separate from server transport and authority. The browser checks session status, uses the `comm`-owned WebAuthn client, and calls the protected `/api/v1/ingress/human` route with a stable contribution identifier. Package-owned asset references remain relative to `/mob/`; the only host-global browser dependency is the assigned public `/_assets/comm/auth.js` module. The application never reads or persists the `HttpOnly` session cookie. New source branches require a corresponding local `AGENTS.md` when their structure becomes non-obvious.
+Keep browser application behavior separate from server transport and authority. The browser checks session status, uses the `comm`-owned WebAuthn client, and calls the protected `/api/v1/ingress/human` route with a stable message identifier. Package-owned asset references remain relative to `/mob/`; the only host-global browser dependency is the assigned public `/_assets/comm/auth.js` module. The application never reads or persists the `HttpOnly` session cookie. New source branches require a corresponding local `AGENTS.md` when their structure becomes non-obvious.

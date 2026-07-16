@@ -12,8 +12,8 @@
 - `authenticating` — native WebAuthn is active.
 - `locked` — Principal content is hidden after explicit lock, session expiry/revocation, or 15 minutes in the background.
 - `ready` — chat is available for message input and submission.
-- `submitting` — a submitted message is awaiting ingress acknowledgement; retry reuses its stable contribution identifier.
-- `accepted` — ingress accepted the Principal contribution for processing; this acknowledgement is not an assistant event.
+- `submitting` — a submitted message is awaiting ingress acknowledgement; retry reuses its stable message identifier.
+- `accepted` — ingress accepted the Principal Message for processing; this acknowledgement is not an assistant event.
 - `outcome` — a server-provided result is visible to the Principal.
 - `error` — the browser cannot complete the requested operation; it preserves a safe retry path without claiming that the message was accepted.
 - `offline` — required runtime communication is unavailable; the browser does not silently queue the message for later delivery.

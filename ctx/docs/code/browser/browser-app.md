@@ -26,9 +26,9 @@ The initial browser entry is the Principal's mobile Alarisa contact experience a
 3. The unlocked Principal enters and submits a message.
 4. The page shows durable ingress acknowledgement or a clear unavailable/error state.
 
-The page submits `POST /api/v1/ingress/human` with `{contributionId, text, channel: "mob"}` to its own origin after authentication. It creates one contribution identifier for the current text and retains it across retry until `202`. A `202` confirms only durable ingress acceptance. A `401` returns the surface to locked state. Later assistant-event delivery remains undeclared.
+The page submits `POST /api/v1/ingress/human` with `{contributionId, text, channel: "mob"}` to its own origin after authentication. `contributionId` is the current legacy transport-field name for the stable Principal Message identifier, not canonical domain terminology; renaming it to `messageId` requires a coordinated code and API migration. The page retains it across retry until `202`. A `202` confirms durable ingress acceptance only; it does not determine Message meaning or produce a Signal. A `401` returns the surface to locked state. Later assistant-event delivery remains undeclared.
 
-Explicit lock revokes the server session. Remaining continuously in the background for 15 minutes also revokes it and removes the contribution form from visible state. Foreground inactivity does not lock. If the server is unavailable, the PWA stays locked.
+Explicit lock revokes the server session. Remaining continuously in the background for 15 minutes also revokes it and removes the message form from visible state. Foreground inactivity does not lock. If the server is unavailable, the PWA stays locked.
 
 ## Accessibility Baseline
 
