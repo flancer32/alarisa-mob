@@ -7,7 +7,7 @@ const principalContent = document.querySelector('#principal-content');
 const lockAction = document.querySelector('#lock-action');
 const form = document.querySelector('#human-signal-form');
 const input = document.querySelector('#human-signal');
-const status = document.querySelector('.status');
+const status = document.querySelector('#signal-status');
 const outcome = document.querySelector('.outcome');
 const button = form.querySelector('button');
 let pendingContributionId;
