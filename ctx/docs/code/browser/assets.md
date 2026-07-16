@@ -1,17 +1,17 @@
 # Browser Assets
 
 - Path: `ctx/docs/code/browser/assets.md`
-- Changed: `20260713`
+- Changed: `20260716`
 
 ## Asset Boundary
 
-Browser-delivered static assets belong in `web/` and remain owned by this package even when the base host maps them to origin-root URLs.
+Browser-delivered static assets belong in `web/`, remain owned by this package, and use relative URLs under the host-assigned `/mob/` scope.
 
 ## Required Resource Roles
 
 - `index.html` — browser entry document for the chat page;
 - `manifest.webmanifest` — installation metadata;
-- `sw.js` — root-scoped service-worker entry;
+- `sw.js` — mobile-scope service-worker entry;
 - application icons — install and browser identity assets;
 - browser modules, styles, and other static application resources — page presentation and behavior.
 

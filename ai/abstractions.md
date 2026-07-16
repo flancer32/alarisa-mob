@@ -2,46 +2,32 @@
 
 ## Static PWA Source
 
-The host maps the installed package's `web/` directory to `/`. This makes the following package-owned resources root-scoped:
+The host maps the installed package's `web/` directory to `/mob/`. Package resources use relative URLs:
 
-- `/` — PWA entry page;
-- `/manifest.webmanifest` — installation metadata;
-- `/sw.js` — service worker;
-- `/app.js`, `/app.css`, and `/icon.svg` — page resources.
+- `./` — PWA entry page;
+- `./manifest.webmanifest` — installation metadata;
+- `./sw.js` — service worker confined to the mobile scope;
+- `./app.js`, `./app.css`, and `./icon.svg` — page resources.
 
-Do not copy these resources into the host only to obtain root URLs.
+Do not copy these resources into the host or give them root scope.
 
-## Human Ingress Handler
+## Shared Principal Transport
 
-`Alarisa_Mob_Back_Handler_HumanIngress$` handles only `POST /api/ingress/human` with `Content-Type: application/json` and body:
+The browser calls the `comm`-owned `POST /api/v1/ingress/human` route with `Content-Type: application/json` and body:
 
 ```json
-{"text":"Principal contribution"}
+{"contributionId":"stable-id","text":"Principal contribution","channel":"mob"}
 ```
 
-It trims `text`, accepts 1–4000 characters, then calls:
-
-```js
-await ingress.accept({text, channel: 'pwa'});
-```
-
-where `ingress` is `Alarisa_Back_Ingress_Human$` supplied by the host.
+The browser retains `contributionId` across retry of unchanged text and clears it after `202`.
 
 Responses are:
 
-- `202 {"accepted":true}` — host ingress accepted the contribution;
+- `202 {"accepted":true,"contributionId":"…"}` — back ingress durably accepted the contribution;
 - `400` — malformed JSON or invalid text;
 - `415` — non-JSON request;
 - `503` — host ingress could not accept it.
 
 A `202` is an ingress acknowledgement only. It is not an assistant event, a signal identifier, or a promise of an eventual answer.
 
-## Host Ingress Contract
-
-The host must publish `Alarisa_Back_Ingress_Human$` with:
-
-```js
-{ accept: async ({text, channel}) => { /* accept or throw */ } }
-```
-
-The host owns authentication, authorization, validation beyond the transport limit, creation of a human signal, and all dialogue semantics.
+The `comm` and `back` packages own transport validation and durable acceptance. The mobile package owns only presentation and retry state.

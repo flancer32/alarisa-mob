@@ -1,7 +1,7 @@
 # Browser Application Overview
 
 - Path: `ctx/docs/code/browser/browser-app.md`
-- Changed: `20260713`
+- Changed: `20260716`
 
 ## Purpose
 
@@ -9,15 +9,15 @@ Describe the `@flancer32/alarisa-mob` mobile PWA client package.
 
 ## Delivery Model
 
-The package delivers an installable PWA browser client. Its `web/` directory contains the entry document, manifest, service worker, icons, and application resources. The base Alarisa host publishes that directory at URL prefix `/`, which gives the manifest and service worker their required root URL paths without copying them into the host repository.
+The package delivers an installable PWA browser client. Its `web/` directory contains the entry document, manifest, service worker, icons, and application resources. The base Alarisa host publishes that directory at `/mob/`; relative resource URLs and explicit worker scope keep control inside the mobile application.
 
 The browser framework and routing model are undecided. The manifest and service worker are required PWA resources; their detailed fields and caching strategy remain implementation work.
 
 ## Entry Points
 
-The initial browser entry is the Principal's Alarisa chat experience at `/`. It must allow the Principal to enter and submit a message for server processing.
+The initial browser entry is the Principal's mobile Alarisa contact experience at package-relative `./`, published as `/mob/`. It allows the Principal to enter and submit a message for server processing.
 
-`/manifest.webmanifest` and `/sw.js` are browser entry resources for installation and service-worker registration. They are package-owned resources delivered by the host mapping.
+`./manifest.webmanifest` and `./sw.js` are package-owned installation resources within the assigned mobile scope.
 
 ## Main User Flows
 
@@ -25,7 +25,7 @@ The initial browser entry is the Principal's Alarisa chat experience at `/`. It 
 2. The Principal enters and submits a message.
 3. The page shows that the message is being processed, then presents a returned outcome or a clear unavailable/error state.
 
-For the first vertical slice, the page submits `POST /api/ingress/human` with `{ "text": string }` to its own origin. A `202` response confirms only that ingress accepted the Principal contribution for processing. The page must not represent this acknowledgement as an assistant event or an eventual outcome. Authentication, the response's optional metadata, and the method by which later assistant events reach the browser remain runtime concerns; SSE is a candidate only.
+The page submits `POST /api/v1/ingress/human` with `{contributionId, text, channel: "mob"}` to its own origin. It creates one contribution identifier for the current text and retains it across retry until `202`. A `202` confirms only durable ingress acceptance. The page must not represent this acknowledgement as an assistant event or eventual outcome. Authentication and later assistant-event delivery remain runtime concerns.
 
 ## Accessibility Baseline
 

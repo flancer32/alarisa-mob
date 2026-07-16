@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.3.0] - 2026-07-16 - Scoped mobile PWA
+
+### Changed
+
+- Made manifest, service-worker, and asset URLs relative to the host-assigned `/mob/` scope.
+- Moved Principal contribution transport ownership to `@flancer32/alarisa-comm` at `POST /api/v1/ingress/human`.
+- Added stable contribution identifiers across retry.
+
+### Removed
+
+- Removed the package-owned server ingress handler and host-ingress development fixture.
+
 ## [0.2.0] - 2026-07-15 - Mobile package identity
 
 ### Changed

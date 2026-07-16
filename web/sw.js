@@ -1,5 +1,5 @@
 const CACHE = 'alarisa-mob-v1';
-const ASSETS = ['/', '/app.css', '/app.js', '/manifest.webmanifest', '/icon.svg', '/favicon.ico', '/icon-192.png', '/icon-512.png', '/alarisa2-512.webp'];
+const ASSETS = ['./', './app.css', './app.js', './manifest.webmanifest', './icon.svg', './favicon.ico', './icon-192.png', './icon-512.png', './alarisa2-512.webp'];
 self.addEventListener('install', (event) => event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS))));
 self.addEventListener('activate', (event) => event.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', (event) => {

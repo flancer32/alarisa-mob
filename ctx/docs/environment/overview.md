@@ -1,7 +1,7 @@
 # Mobile PWA Environment Overview
 
 - Path: `ctx/docs/environment/overview.md`
-- Changed: `20260713`
+- Changed: `20260716`
 
 ## Runtime Model
 
@@ -9,4 +9,4 @@ Package tooling runs on Node.js 20 or newer. The delivered application runs in a
 
 ## Constraints
 
-The host must publish this package's `web/` directory at the web-origin root so the manifest and service worker have root URL paths and the PWA can be installed on a mobile device. The package must not assume a specific backend host, deployment topology, browser framework, offline data strategy, push delivery, or server-to-browser delivery mechanism until those are explicitly defined.
+The host publishes this package's `web/` directory at `/mob/`. Relative manifest, service-worker, and asset URLs keep installation and worker control inside that scope. The package must not assume a separate backend host, browser framework, offline data strategy, push delivery, or server-to-browser delivery mechanism until those are explicitly defined.

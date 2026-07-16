@@ -22,13 +22,9 @@ for (const entry of entries) {
   container.addNamespaceRoot(entry.prefix, entry.dirAbs, entry.ext);
 }
 
-// add local mock namespace for the host dependency (not installed in this package)
-container.addNamespaceRoot("Alarisa_Back_", path.resolve(projectRoot, "src-dev"), ".mjs");
-
 const pipeline = await container.get("Fl32_Web_Back_PipelineEngine$");
 const server = await container.get("Fl32_Web_Back_Server$");
 const staticHandler = await container.get("Fl32_Web_Back_Handler_Static$");
-const humanIngress = await container.get("Alarisa_Mob_Back_Handler_HumanIngress$");
 const dtoSourceFactory = await container.get("Fl32_Web_Back_Dto_Source__Factory$");
 const runtimeConfigFactory = await container.get("Fl32_Web_Back_Config_Runtime__Factory$");
 
@@ -38,13 +34,12 @@ runtimeConfigFactory.freeze();
 
 const source = dtoSourceFactory.create({
   root: path.resolve(projectRoot, "web"),
-  prefix: "/",
+  prefix: "/mob/",
   allow: { ".": ["."] },
   defaults: ["index.html"],
 });
 
 await staticHandler.init({ sources: [source] });
-pipeline.addHandler(humanIngress);
 pipeline.addHandler(staticHandler);
 
 let stopping = false;

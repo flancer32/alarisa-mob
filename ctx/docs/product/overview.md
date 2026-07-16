@@ -1,7 +1,7 @@
 # Mobile PWA Package Overview
 
 - Path: `ctx/docs/product/overview.md`
-- Changed: `20260713`
+- Changed: `20260716`
 
 ## Purpose
 
@@ -19,5 +19,5 @@ Out of scope: Alarisa runtime orchestration, memory ownership, external-service 
 - It does not create a separate human role or authority model.
 - PWA chat is the initial interaction boundary.
 - The Principal interacts with Alarisa primarily through mobile devices; the UI is built mobile-first.
-- The package owns browser resources; the base host publishes them at the origin-root URL paths required for PWA installation.
-- The package does not define the server message contract or server-to-browser delivery mechanism.
+- The package owns browser resources relative to its host-assigned `/mob/` scope; it does not claim the origin root.
+- Shared server/client message contracts belong to `@flancer32/alarisa-comm`; the package does not own server transport or the server-to-browser delivery mechanism.

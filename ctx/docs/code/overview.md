@@ -1,12 +1,12 @@
 # Code Overview
 
 - Path: `ctx/docs/code/overview.md`
-- Changed: `20260713`
+- Changed: `20260716`
 
 ## Code Structure
 
-`src/` contains ECMAScript modules in the `Alarisa_Mob_` namespace, including the TeqFW handler that bridges the PWA submission route to a host-provided ingress component. `web/` contains resources delivered to the browser. The package keeps the PWA entry document, manifest, service worker, icons, styles, and browser modules there; the base host publishes that directory at URL prefix `/`.
+`web/` contains the PWA entry document, relative-scope manifest and service worker, icons, styles, and browser module. The base host publishes that directory at `/mob/`. `src/` reserves the `Alarisa_Mob_` namespace but contains no server handler.
 
 ## Engineering Constraints
 
-Keep browser application behavior separate from base-runtime authority and backend contracts. `Alarisa_Mob_Back_Handler_HumanIngress$` is registered by the host before its static handler and depends on `Alarisa_Back_Ingress_Human$`, whose `accept({text, channel})` operation is implemented by the base runtime. Browser resources that require root URL paths remain package-owned and rely on the host mapping rather than copies in the base repository. New source branches require a corresponding local `AGENTS.md` when their structure becomes non-obvious.
+Keep browser application behavior separate from server transport and authority. The browser calls the `comm`-owned `/api/v1/ingress/human` route with a stable contribution identifier. All package asset references remain relative to `/mob/`; no resource may require root scope or claim a host-global namespace. New source branches require a corresponding local `AGENTS.md` when their structure becomes non-obvious.
