@@ -22,11 +22,11 @@ for (const entry of entries) {
   container.addNamespaceRoot(entry.prefix, entry.dirAbs, entry.ext);
 }
 
-const pipeline = await container.get("Fl32_Web_Back_PipelineEngine$");
-const server = await container.get("Fl32_Web_Back_Server$");
-const staticHandler = await container.get("Fl32_Web_Back_Handler_Static$");
-const dtoSourceFactory = await container.get("Fl32_Web_Back_Dto_Source__Factory$");
-const runtimeConfigFactory = await container.get("Fl32_Web_Back_Config_Runtime__Factory$");
+const pipeline = await container.get("TeqFw_Web_Back_PipelineEngine$");
+const server = await container.get("TeqFw_Web_Back_Server$");
+const staticHandler = await container.get("TeqFw_Web_Back_Handler_Static$");
+const dtoSourceFactory = await container.get("TeqFw_Web_Back_Dto_Source__Factory$");
+const runtimeConfigFactory = await container.get("TeqFw_Web_Back_Config_Runtime__Factory$");
 
 // initialize runtime config
 runtimeConfigFactory.configure({ port: 3000, type: "http" });

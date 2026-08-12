@@ -7,7 +7,7 @@
 
 The package contains browser-side modules under `src/` and browser-delivered resources under `web/`. It communicates with Alarisa only through contracts supplied or approved by the base project.
 
-The base `@flancer32/alarisa` host resolves the package's published `web/` directory and maps it to `/mob/` through `@flancer32/teq-web`. Entry, manifest, service-worker, and asset references are relative to that assigned scope. The mobile service worker must not control the desktop application, API, hooks, or host routes.
+The base `@flancer32/alarisa` host resolves the package's published `web/` directory and maps it to `/mob/` through `@teqfw/web`. Entry, manifest, service-worker, and asset references are relative to that assigned scope. The mobile service worker must not control the desktop application, API, hooks, or host routes.
 
 ## Ownership
 

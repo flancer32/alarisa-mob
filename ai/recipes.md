@@ -5,7 +5,7 @@
 Configure the host static handler with the installed package's `web/` directory at `/mob/`.
 
 ```js
-const staticHandler = await container.get('Fl32_Web_Back_Handler_Static$');
+const staticHandler = await container.get('TeqFw_Web_Back_Handler_Static$');
 
 pipeline.addHandler(staticHandler);
 await staticHandler.init({

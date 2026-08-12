@@ -31,21 +31,25 @@
     "node": ">=20"
   },
   "teqfw": {
-    "namespaces": [
-      {
-        "prefix": "Alarisa_Mob_",
-        "path": "./src",
-        "ext": ".mjs"
+    "fw": {
+      "di": {
+        "namespaces": [
+          {
+            "prefix": "Alarisa_Mob_",
+            "path": "./src",
+            "ext": ".mjs"
+          }
+        ]
       }
-    ]
+    }
   },
   "scripts": {
     "test:unit": "find test/unit -name '*.test.mjs' -print0 | xargs -0 -r node --test",
     "test": "npm run test:unit"
   },
   "dependencies": {
-    "@flancer32/teq-web": ">=0.13.1",
-    "@teqfw/log": ">=0.1.0"
+    "@teqfw/log": "^2.0.0",
+    "@teqfw/web": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",
